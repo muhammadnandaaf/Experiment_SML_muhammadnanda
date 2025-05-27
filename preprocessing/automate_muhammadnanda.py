@@ -130,6 +130,8 @@ def preprocessing_pipeline(csv_path):
         "LoanAmount",
         "MonthlyLoanPayment"
     ]
+    train_pca_df = X_train.copy().reset_index(drop=True)
+    test_pca_df = X_test.copy().reset_index(drop=True)
 
     # 9. Fungsi PCA
     def apply_pca_and_transform(pca_features, train_df, test_df, pca_name):
