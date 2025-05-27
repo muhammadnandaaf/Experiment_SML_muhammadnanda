@@ -210,12 +210,12 @@ def preprocessing_pipeline(csv_path):
     train_final = pd.concat([train_pca_df, y_train.reset_index(drop=True)], axis=1)
     test_final = pd.concat([test_pca_df, y_test.reset_index(drop=True)], axis=1)
 
-    train_final.to_csv('../preprocessing/train_pca.csv', index=False)
-    test_final.to_csv('../preprocessing/test_pca.csv', index=False)
+    train_final.to_csv('preprocessing/train_pca.csv', index=False)
+    test_final.to_csv('preprocessing/test_pca.csv', index=False)
 
     return train_final, test_final
 
-file_path = f'./datasets/Loan.csv'
+file_path = f'datasets/Loan.csv'
 train_final, test_final = preprocessing_pipeline(file_path)
 train_final.to_csv("train_pca.csv", index=False)
 test_final.to_csv("test_pca.csv", index=False)
