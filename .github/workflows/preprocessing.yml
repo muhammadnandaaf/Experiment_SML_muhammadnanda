@@ -12,6 +12,9 @@ jobs:
   preprocess:
     runs-on: ubuntu-latest
 
+    permissions:
+      contents: write
+
     steps:
       # Langkah 1: Ambil kode dari repository
       - name: Checkout Repository
