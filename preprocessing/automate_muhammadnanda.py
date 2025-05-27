@@ -8,7 +8,7 @@ import joblib
 import os
 
 def preprocessing_pipeline(csv_path):
-    df = pd.read_csv(csv_path)
+    df = pd.read_csv(csv_path, encoding='latin1')
 
     # 1. Drop Fitur yang tidak digunakan
     df = df.drop(['ApplicationDate'], axis=1)
