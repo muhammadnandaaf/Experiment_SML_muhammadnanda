@@ -217,5 +217,10 @@ def preprocessing_pipeline(csv_path):
 
 file_path = f'datasets/Loan.csv'
 train_final, test_final = preprocessing_pipeline(file_path)
-train_final.to_csv("train_pca.csv", index=False)
-test_final.to_csv("test_pca.csv", index=False)
+
+os.makedirs(os.path.join("preprocessing", "preprocessing_datasets"), exist_ok=True)
+output_train_path = os.path.join("preprocessing", "preprocessing_datasets", "train_pca.csv")
+output_test_path = os.path.join("preprocessing", "preprocessing_datasets", "test_pca.csv")
+
+train_final.to_csv(output_train_path, index=False)
+test_final.to_csv(output_test_path, index=False)
